@@ -1,0 +1,17 @@
+[
+    {
+        "flightId": 1,
+        "departure":{
+            "date": "",
+            "location": "Hannover",
+            "lat": 336.890257,
+            "lng": 30.707417
+        },
+        "arrival": {
+            "date": "",
+            "location": "Humburg",
+            "lat": 336.890257,
+            "lng": 30.707417 
+        }
+    }
+]

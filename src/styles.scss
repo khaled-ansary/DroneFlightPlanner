@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* import bootstrap 4 */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+/* import primeng css */
+@import '~primeicons/primeicons.css';
+@import '~primeng/resources/themes/nova-light/theme.css';
+@import '~primeng/resources/primeng.min.css';
+
+$primary-color: #333;
+$background-color:  #efefef;
+
+body {
+    color: $primary-color;
+    background-color: $background-color;
+}
+
