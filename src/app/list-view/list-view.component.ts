@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FlightPlannerService } from '../services/flight-planner.service';
+import { Flight } from '../models/flight';
 
 @Component({
   selector: 'app-list-view',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListViewComponent implements OnInit {
 
-  constructor() { }
+  flights: Array<Flight> = [];
+  selectedFlight: Flight;
+  
+  constructor(private flightPlannerService: FlightPlannerService) { }
 
   ngOnInit() {
+    this.flights = this.flightPlannerService.getFlights();
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FlightPlannerService } from './services/flight-planner.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'DroneFlightPlanner';
+  constructor(private flightPlannerService: FlightPlannerService) {
+    // load flight data if it doesn't exist
+    if (!this.flightPlannerService.getFlights()) {
+      this.flightPlannerService.initialLoadedFlights();
+    }
+  }
 }

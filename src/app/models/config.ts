@@ -4,4 +4,5 @@
  */
 export class Config {
     static readonly apiUrl: string = 'assets/apis/flights.json';
+    static readonly storageId: string = 'flight';
 }
