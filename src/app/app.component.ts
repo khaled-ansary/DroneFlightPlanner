@@ -7,10 +7,17 @@ import { FlightPlannerService } from './services/flight-planner.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  selectedFlight;
   constructor(private flightPlannerService: FlightPlannerService) {
     // load flight data if it doesn't exist
     if (!this.flightPlannerService.getFlights()) {
       this.flightPlannerService.initialLoadedFlights();
     }
+  }
+
+  onFlightSelect(flight) {
+    this.selectedFlight = flight;
+    console.log(this.selectedFlight);
   }
 }

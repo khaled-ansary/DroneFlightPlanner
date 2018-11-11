@@ -1,17 +1,17 @@
-<p><p-table [value]="flights">
+<p-table [value]="flights" selectionMode="single"
+    [(selection)]="selectedFlight"
+    (onRowSelect)="onRowSelect($event)" >
     <ng-template pTemplate="header">
         <tr>
             <th>Flight ID</th>
-            <th>Departure Location</th>
-            <th>Arrival Location</th>
+            <th>Location</th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-flight>
-        <tr>
+        <tr [pSelectableRow]="flight">
             <td>{{flight.flightId}}</td>
-            <td>{{flight.departure.location}}</td>
-            <td>{{flight.arrival.location}}</td>
+            <td>{{flight.location}}</td>
         </tr>
     </ng-template>
 </p-table>
-</p>
+

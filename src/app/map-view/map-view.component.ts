@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Flight } from '../models/flight';
 declare var google: any;
 
 @Component({
@@ -6,7 +7,10 @@ declare var google: any;
   templateUrl: './map-view.component.html',
   styleUrls: ['./map-view.component.css']
 })
-export class MapViewComponent implements OnInit {
+export class MapViewComponent implements OnInit, OnChanges {
+
+  @Input()
+  flight;
 
   options;
   overlays: any[];
@@ -17,9 +21,27 @@ export class MapViewComponent implements OnInit {
         center: {lat: 36.890257, lng: 30.707417},
         zoom: 12
     };
-    this.overlays = [
-        new google.maps.Polyline({path: [{lat: 36.86149, lng: 30.63743},{lat: 36.86341, lng: 30.72463}], geodesic: true, strokeColor: '#FF0000', strokeOpacity: 0.5, strokeWeight: 2})
-    ];
+  }
+
+  ngOnChanges() {
+    console.log(this.flight);
+    this.overlays = [];
+    if (this.flight && this.flight.points) {
+      for (const point of this.flight.points) {
+        this.overlays.push(
+          new google.maps.Polyline({path:
+            [{lat: point.start.lat, lng: point.start.lng},
+            {lat: point.end.lat, lng: point.end.lat }],
+          geodesic: true, strokeColor: '#FF0000',
+          strokeOpacity: 0.5, strokeWeight: 2}));
+      }
+      console.log(this.overlays);
+    }
+
+  }
+
+  handleMapClick(event) {
+
   }
 
 }

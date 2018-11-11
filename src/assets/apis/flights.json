@@ -1,17 +1,43 @@
 [
     {
         "flightId": 1,
-        "departure":{
-            "date": "",
-            "location": "Hannover",
-            "lat": 336.890257,
-            "lng": 30.707417
-        },
-        "arrival": {
-            "date": "",
-            "location": "Humburg",
-            "lat": 336.890257,
-            "lng": 30.707417 
+        "location": "Hannover",
+        "points":[
+            {
+                "start":{
+                    "lat": 36.86149,
+                    "lng": 30.63743
+                },
+                "end":{
+                    "lat":  36.86341,
+                    "lng": 30.72463 
+                }
+            },
+            {
+                "start":{
+                    "lat": 37.86149,
+                    "lng": 30.63743
+                },
+                "end":{
+                    "lat":  37.86341,
+                    "lng": 30.72463 
+                }
+            }
+        ]
+    },
+    {
+        "flightId": 2,
+        "location": "Hamburg",
+        "points":[{
+            "start":{
+                "lat": 36.86149,
+                "lng": 30.63743
+            },
+            "end":{
+                "lat":  36.86341,
+                "lng": 30.72463 
+            }
         }
+        ]
     }
 ]

@@ -1,9 +1,13 @@
 
 /** flight model */
-import { Schedule } from './schedule';
+import { Point } from './point';
 
 export class Flight {
     flightId: number;
-    arrival: Schedule;
-    departure: Schedule;
+    location: string;
+    points: Array<Point>;
+
+    constructor () {
+        this.points = new Array<Point>();
+    }
 }

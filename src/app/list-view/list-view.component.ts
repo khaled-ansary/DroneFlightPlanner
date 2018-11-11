@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
 import { FlightPlannerService } from '../services/flight-planner.service';
 import { Flight } from '../models/flight';
 
@@ -9,13 +9,18 @@ import { Flight } from '../models/flight';
 })
 export class ListViewComponent implements OnInit {
 
-  flights: Array<Flight> = [];
+  flights: Flight[];
   selectedFlight: Flight;
-  
+  @Output() rowSelect = new EventEmitter<Flight>();
+
   constructor(private flightPlannerService: FlightPlannerService) { }
 
   ngOnInit() {
     this.flights = this.flightPlannerService.getFlights();
   }
 
+  onRowSelect(event) {
+    console.log(event.data);
+    this.rowSelect.emit(event.data);
+  }
 }

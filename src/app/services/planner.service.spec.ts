@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { DronFlightPlannerService } from './flight-planner.service';
+import { FlightPlannerService } from './flight-planner.service';
 
 describe('DronFlightPlannerService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [DronFlightPlannerService]
+      providers: [FlightPlannerService]
     });
   });
 
-  it('should be created', inject([DronFlightPlannerService], (service: DronFlightPlannerService) => {
+  it('should be created', inject([FlightPlannerService], (service: FlightPlannerService) => {
     expect(service).toBeTruthy();
   }));
 });

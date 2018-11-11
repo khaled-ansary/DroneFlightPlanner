@@ -7,10 +7,10 @@
   </nav>
   <div class="row">
     <div class="col-md-4">
-      <app-list-view></app-list-view>
+      <app-list-view (rowSelect)="onFlightSelect($event)"></app-list-view>
     </div>
     <div class="col-md-8">
-      <app-map-view></app-map-view>
+      <app-map-view [flight]="selectedFlight"></app-map-view>
     </div>
   </div>
 </div>
